@@ -1,5 +1,5 @@
-venv/
 .venv/
-venv312/
+.venv/venv312/
 data/*.csv
 *.csv
+
