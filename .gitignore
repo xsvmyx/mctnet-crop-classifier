@@ -1,2 +1,4 @@
 venv/
-.venv/
+.venv/venv312/
+data/
+*.csv
