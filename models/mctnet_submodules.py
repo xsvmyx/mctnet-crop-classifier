@@ -28,7 +28,7 @@ class CNNSubmodule(nn.Module):
         out = self.conv2(out)
         out = self.bn2(out)
         
-        out = out + identity
+        out = out + identity 
         
         out = self.relu(out)
         
@@ -119,15 +119,16 @@ class TransformerSubmodule(nn.Module):
 
         self.transformer_encoder = nn.TransformerEncoder(encoder_layer, num_layers=1)
 
-    def forward(self, x, input2_mask):
+    def forward(self, x, input2_mask=None):
         # x: Input spectral [Batch, 36, 10]
         # input2_mask: Le masque pour ALPE
         
-      
-        pos_info = self.alpe(x, input2_mask)
-        
-       
-        x = x + pos_info
+
+        #stage 1 uniquement
+        if self.use_alpe and input2_mask is not None:
+                
+                pos_info = self.alpe(x, input2_mask)
+                x = x + pos_info
         
         
         # Ici se passent le Multi-Head Attention, Add & Norm, Feed Forward
