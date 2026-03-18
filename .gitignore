@@ -1,12 +1,10 @@
-<<<<<<< HEAD
 venv312/
 data/*.csv
 *.csv
 *.pth
-=======
 .venv/
 .venv/venv312/
+.venv312/
+venv/
 data/*.csv
-*.csv
 
->>>>>>> a8fd17b059582033609fbf370df6c32c9a71d546
