@@ -104,11 +104,12 @@ class ALPE(nn.Module):
 
 
 class TransformerSubmodule(nn.Module):
-    def __init__(self, d_model=10, nhead=2, dim_feedforward=64):
+    def __init__(self, d_model=10, nhead=2, dim_feedforward=64, use_alpe=False):
         super(TransformerSubmodule, self).__init__()
+        self.use_alpe = use_alpe
         
-
-        self.alpe = ALPE(d_model=d_model)
+        if self.use_alpe:    
+            self.alpe = ALPE(d_model=d_model)
     
         encoder_layer = nn.TransformerEncoderLayer(
             d_model=d_model, 
