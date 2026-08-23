@@ -7,4 +7,5 @@ data/*.csv
 .venv312/
 venv/
 data/*.csv
-
+models/*.pth
+*.pth
